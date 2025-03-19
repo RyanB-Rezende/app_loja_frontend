@@ -1,4 +1,3 @@
-import 'package:projeto_flutter/data/models/model.dart';
 import 'package:projeto_flutter/services/api_services.dart';
 
 class ProdutoRepository {
@@ -14,11 +13,11 @@ class ProdutoRepository {
     }
   }
 
-  Future<void> addProduto(String token, Produto produto) async {
-    try {
-      await apiServices.cadastrarProduto(token, Produto);
-    } catch (e) {
-      throw Exception('Erro ao Cadastrar Produto: $e');
-    }
-  }
+  //   Future<void> addProduto(String token, Produto produto) async {
+  //     // try {
+  //     //   await apiServices.cadastrarProduto(token, Produto);
+  //     // } catch (e) {
+  //     //   throw Exception('Erro ao Cadastrar Produto: $e');
+  //     // }
+  //   }
 }
