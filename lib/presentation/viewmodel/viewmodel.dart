@@ -38,7 +38,7 @@ class ProdutoViewModel with ChangeNotifier {
 
     try {
       var resposta = await _produtoRepository.fetchProdutos(page: _paginaAtual);
-      _produtos = resposta['produto'];
+      _produtos = resposta['produtos'];
 
       _temMaisPaginas = resposta['nextPage'] != null;
 
