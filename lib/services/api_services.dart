@@ -29,4 +29,20 @@ class ApiServices {
       throw Exception('Falha ao carregar produtos');
     }
   }
+
+  Future<String> login(String username, String password) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/token/'),
+      headers: {'Content-Type': 'application/json'},
+      body: json.encode({'username': username, 'password': password}),
+    );
+
+    if (response.statusCode == 200) {
+      Map<String, dynamic> data = json.decode(response.body);
+      String token = data['access'];
+      return token;
+    } else {
+      throw Exception('Falha ao fazer login');
+    }
+  }
 }
